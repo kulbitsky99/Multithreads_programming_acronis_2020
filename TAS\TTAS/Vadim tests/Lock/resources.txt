@@ -1,1 +1,0 @@
-https://geidav.wordpress.com/2016/03/23/test-and-set-spinlocks/

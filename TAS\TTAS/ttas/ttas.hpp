@@ -6,9 +6,9 @@
 enum TTAS_CONFIGS
 {
 	Min_backoff_time   	= 200,
-	Max_backoff_time   	= (2^10) * Min_backoff_time,
+	Max_backoff_time   	= (2^8) * Min_backoff_time,
 	Exp_backoff_coeff 	= 2,
-	Sleep_time 			= 100
+	Sleep_time 			= 500
 };
 
 class spin_lock_TTAS
