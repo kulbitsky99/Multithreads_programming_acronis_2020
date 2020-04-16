@@ -11,4 +11,6 @@ Check later updates with defence from ABA collisions and lock-free structures.
 Simple realization of different locks:
 
 	- Test and set lock(and yield lock)
-	- Test and test and set lock(yield_lock, sleep_yield_lock, exponential_backoff_lock)
+	- Test and test and set lock(and yield_lock, sleep_yield_lock, exponential_backoff_lock)
+
+See the pictures in TAS/TTAS folders
