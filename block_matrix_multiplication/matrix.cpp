@@ -1,12 +1,14 @@
 #include <iostream>
 #include <climits>
 #include <vector>
+#include <chrono>
 
 
 void print_matrix(double** matrix, int N);
 void generate_matrix(double** matrix, int N);
 void simple_product(double** a, double** b, double** c, int N);
 void find_product(double** a, double** b, double** c, int N, int s);
+int block_min(int j_block, int s, int N);
 
 long int input_retrieval(char * str)
 {
@@ -31,8 +33,8 @@ int main(int argc, char** argv)
 		exit(-1);
 	}
 
-	long int N = input_retrieval(argv[1]);
-	long int Block = input_retrieval(argv[2]);
+	N = input_retrieval(argv[1]);
+	Block = input_retrieval(argv[2]);
 
 
 	//allocate memory for matrixes
@@ -51,15 +53,20 @@ int main(int argc, char** argv)
 	generate_matrix(b, N);
 
 
-	print_matrix(a, N);
-	print_matrix(b, N);
+	//print_matrix(a, N);
+	//print_matrix(b, N);
 
-	find_product(a, b, c, N, S);
-	find_naive_product(a, b, c, N);
+	auto start = std::chrono::system_clock::now();
+	simple_product(a, b, c, N);
+	auto end = std::chrono::system_clock::now();
+	auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+	std::cout << "Simple product time = " << elapsed.count() << '\n';
 
-
-
-	
+	start = std::chrono::system_clock::now();
+	find_product(a, b, c, N, Block);
+	end = std::chrono::system_clock::now();
+	elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+	std::cout << " Block matrix time = " << elapsed.count() << '\n';
 
 	// free
 	for(int i = 0; i < N; i++)

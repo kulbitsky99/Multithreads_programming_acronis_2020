@@ -14,3 +14,13 @@ Simple realization of different locks:
 	- Test and test and set lock(and yield_lock, sleep_yield_lock, exponential_backoff_lock)
 
 See the pictures in TAS/TTAS folders
+
+## block_matrix_mutiplication
+
+Carry out multiplication of big matrixes with right usage of cache lines(loaded for the CPU cache data should be used effectively)
+
+###Results 
+For input parameters: size = 512 * 512, block = 32.
+	Simple product time = 1540 us
+	Block matrix time = 956 us
+
