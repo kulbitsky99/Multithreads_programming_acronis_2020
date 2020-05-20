@@ -25,3 +25,5 @@ For input parameters: `size` = 512 * 512, `block` = 32.
 	[x] Simple product time = 1540 us
 	[x] Block matrix time = 956 us
 
+Check the graph working_time_in_us(size of matrix side) in `block_matrix_mutiplication`	folder (yellow - simple product; blue - block product).
+
