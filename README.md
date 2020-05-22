@@ -6,12 +6,13 @@ Program creates single connected list with ability to add elements to the forwar
 
 Check later updates with defence from ABA collisions and lock-free structures.
 
-## tas/ttas spin_lock
+## tas/ttas spin_locks; ticket_lock
 
 Simple realization of different locks:
 
 	- Test and set lock(and yield lock)
 	- Test and test and set lock(and yield_lock, sleep_yield_lock, exponential_backoff_lock)
+	- Ticket lock(and yield lock)
 
 See the pictures in TAS/TTAS folders
 
